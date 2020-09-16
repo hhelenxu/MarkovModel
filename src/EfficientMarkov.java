@@ -1,5 +1,12 @@
 import java.util.*;
 
+/**
+ * More efficient version of BaseMarkov using HashMap.
+ * Only requires scanning the training text once, making
+ * EfficientMarkov text generation O(N+T).
+ *
+ * @author Helen
+ */
 public class EfficientMarkov extends BaseMarkov {
 	private Map<String,ArrayList<String>> myMap;
 
@@ -8,6 +15,7 @@ public class EfficientMarkov extends BaseMarkov {
 	 */
 	EfficientMarkov(){
 		this(3);
+		myMap = new HashMap<>();
 	}
 
 	/**
