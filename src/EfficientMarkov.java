@@ -42,7 +42,11 @@ public class EfficientMarkov extends BaseMarkov {
 
 	@Override
 	public ArrayList<String> getFollows(String key) {
-
+		if (myMap.containsKey(key)) {
+			return myMap.get(key);
+		}
+		else
+			throw new NoSuchElementException(key+" not in map");
 	}
 
 
