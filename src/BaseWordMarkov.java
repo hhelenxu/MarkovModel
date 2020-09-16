@@ -29,6 +29,10 @@ public class BaseWordMarkov implements MarkovInterface<WordGram> {
 	public void setTraining(String text){
 		myWords = text.split("\\s+");
 	}
+	{
+
+
+	}
 
 	/**
 	 * Find and return the first index >= start in words at which target occurs.
