@@ -55,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
-  <component name="RunManager" selected="Application.MarkovDriver">
+  <component name="RunManager" selected="JUnit.MarkovTest">
     <configuration name="Benchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Benchmark" />
       <module name="P3" />
@@ -81,8 +81,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MarkovDriver" />
         <item itemvalue="JUnit.MarkovTest" />
+        <item itemvalue="Application.MarkovDriver" />
         <item itemvalue="Application.Benchmark" />
       </list>
     </recent_temporary>
