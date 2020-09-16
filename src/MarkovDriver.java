@@ -40,13 +40,17 @@ public class MarkovDriver {
 		String text = TextSource.textFromFile(f);
 
 		// only one line below should be uncommented
-		MarkovInterface<String> standard = new BaseMarkov();
+		//MarkovInterface<String> standard = new BaseMarkov();
 		//MarkovInterface<String> efficient = new EfficientMarkov();
-		//MarkovInterface<WordGram> wmm = new BaseWordMarkov();
+		MarkovInterface<WordGram> wmm = new BaseWordMarkov();
 		//MarkovInterface<WordGram> ewm = new EfficientWordMarkov();
 
 		// first parameter is one of the MarkovInterface variables
-		markovGenerate(standard,text);
+		//markovGenerate(standard,text);
+		//markovGenerate(efficient,text);
+		markovGenerate(wmm,text);
+		//markovGenerate(ewm,text);
+
 	}
 
 	private static void printNicely(String random, int screenWidth) {

@@ -39,23 +39,8 @@ public class EfficientMarkov extends BaseMarkov {
 			String key = myText.substring(i, i+myOrder);
 			if (!myMap.containsKey(key)) {
 				myMap.put(key, new ArrayList<>());
-				int pos = 0;  // location where search for key in text starts
-				while (pos < myText.length()) {
-					int start = myText.indexOf(key, pos);
-					if (start == -1) {
-						break;
-					}
-					if (start + key.length() >= myText.length()) {
-						myMap.get(key).add(PSEUDO_EOS);
-						//System.out.println(key);
-						break;
-					}
-					// next line is string equivalent of myText.charAt(start+key.length())
-					String next = myText.substring(start + key.length(), start + key.length() + 1);
-					myMap.get(key).add(next);
-					pos = start + 1;  // search continues after this occurrence
-				}
 			}
+			myMap.get(key).add(myText.substring(i+key.length(),i+key.length()+1));
 		}
 	}
 
