@@ -31,19 +31,31 @@ public class EfficientWordMarkov extends BaseWordMarkov{
      */
     @Override
     public void setTraining(String text) {
+        //sets myWords using BaseWordMarkov method setTraining
         super.setTraining(text);
+
+        //clears myMap
         myMap.clear();
+
+        //creates new WordGram object
         WordGram wg = new WordGram(myWords,0,myOrder);
         for (int i=myOrder-1;i<myWords.length;i++)
         {
+            //calls shiftAdd from WordGram for all but first iteration
             if (i!=myOrder-1)
                 wg = wg.shiftAdd(myWords[i]);
+
+            //create new ArrayList that wg is mapped to
             if (!myMap.containsKey(wg))
                 myMap.put(wg,new ArrayList<>());
+
+            //if no words follow wg
             if (i==myWords.length-1) {
                 myMap.get(wg).add(PSEUDO_EOS);
                 break;
             }
+
+            //adds string to myMap
             myMap.get(wg).add(myWords[i+1]);
         }
     }

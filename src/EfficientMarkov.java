@@ -33,16 +33,27 @@ public class EfficientMarkov extends BaseMarkov {
 	 */
 	@Override
 	public void setTraining(String text) {
+		//sets myText using BaseMarkov method setTraining
 		super.setTraining(text);
+
+		//clears myMap
 		myMap.clear();
+
+		//iterates through all possible keys
 		for (int i=0;i<myText.length()-myOrder+1;i++) {
 			String key = myText.substring(i, i+myOrder);
+
+			//create new ArrayList that key is mapped to
 			if (!myMap.containsKey(key))
 				myMap.put(key, new ArrayList<>());
+
+			//if no letters follow key
 			if (i==myText.length()-myOrder) {
 				myMap.get(key).add(PSEUDO_EOS);
 				break;
 			}
+
+			//adds single character string to myMap
 			myMap.get(key).add(myText.substring(i+key.length(),i+key.length()+1));
 		}
 	}

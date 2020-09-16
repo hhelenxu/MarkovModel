@@ -41,14 +41,14 @@ public class MarkovDriver {
 
 		// only one line below should be uncommented
 		//MarkovInterface<String> standard = new BaseMarkov();
-		//MarkovInterface<String> efficient = new EfficientMarkov();
-		MarkovInterface<WordGram> wmm = new BaseWordMarkov();
+		MarkovInterface<String> efficient = new EfficientMarkov();
+		//MarkovInterface<WordGram> wmm = new BaseWordMarkov();
 		//MarkovInterface<WordGram> ewm = new EfficientWordMarkov();
 
 		// first parameter is one of the MarkovInterface variables
 		//markovGenerate(standard,text);
-		//markovGenerate(efficient,text);
-		markovGenerate(wmm,text);
+		markovGenerate(efficient,text);
+		//markovGenerate(wmm,text);
 		//markovGenerate(ewm,text);
 
 	}
