@@ -27,26 +27,26 @@ public class EfficientMarkov extends BaseMarkov {
 	public void setTraining(String text) {
 		super.setTraining(text);
 		myMap.clear();
-		for (int i=0;i<myText.length()-myOrder;i++) {
+		for (int i=0;i<myText.length()-myOrder+1;i++) {
 			String key = myText.substring(i, i+myOrder);
-			myMap.put(key, new ArrayList<>());
-			int pos = 0;  // location where search for key in text starts
-
-			while (pos < myText.length()) {
-				int start = myText.indexOf(key, pos);
-				if (start == -1) {
-					//System.out.println("didn't find "+key);
-					break;
+			if (!myMap.containsKey(key)) {
+				myMap.put(key, new ArrayList<>());
+				int pos = 0;  // location where search for key in text starts
+				while (pos < myText.length()) {
+					int start = myText.indexOf(key, pos);
+					if (start == -1) {
+						break;
+					}
+					if (start + key.length() >= myText.length()) {
+						myMap.get(key).add(PSEUDO_EOS);
+						//System.out.println(key);
+						break;
+					}
+					// next line is string equivalent of myText.charAt(start+key.length())
+					String next = myText.substring(start + key.length(), start + key.length() + 1);
+					myMap.get(key).add(next);
+					pos = start + 1;  // search continues after this occurrence
 				}
-				if (start + key.length() >= myText.length()) {
-					//System.out.println("found end with "+key);
-					myMap.get(key).add(PSEUDO_EOS);
-					break;
-				}
-				// next line is string equivalent of myText.charAt(start+key.length())
-				String next = myText.substring(start + key.length(), start + key.length() + 1);
-				myMap.get(key).add(next);
-				pos = start + 1;  // search continues after this occurrence
 			}
 		}
 	}

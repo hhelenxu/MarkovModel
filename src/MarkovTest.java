@@ -7,8 +7,8 @@ import java.util.*;
 public class MarkovTest {
 
 	private MarkovInterface<String> getModel(int order) {
-		// TODO: change to EfficientMarkov
-		return new BaseMarkov(order);
+		return new EfficientMarkov();
+		//return new BaseMarkov(order);
 	}
 	
 
