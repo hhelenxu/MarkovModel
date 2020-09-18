@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d979052-205b-4c30-b1e7-ba35ae1d6ebf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Benchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EfficientMarkov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EfficientMarkov.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EfficientWordMarkov.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EfficientWordMarkov.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -11,7 +11,7 @@ public class EfficientWordMarkov extends BaseWordMarkov{
     /**
      * Default constructor for EfficientWordMarkov
      */
-    EfficientWordMarkov(){
+    public EfficientWordMarkov(){
         this(2);
         myMap = new HashMap<>();
     }
@@ -20,7 +20,7 @@ public class EfficientWordMarkov extends BaseWordMarkov{
      * Second constructor for EfficientWordMarkov
      * @param order order of the Markov model
      */
-    EfficientWordMarkov(int order) {
+    public EfficientWordMarkov(int order) {
         super(order);
         myMap = new HashMap<>();
     }
