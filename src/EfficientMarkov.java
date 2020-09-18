@@ -13,7 +13,7 @@ public class EfficientMarkov extends BaseMarkov {
 	/**
 	 * Default constructor for EfficientMarkov
 	 */
-	EfficientMarkov(){
+	public EfficientMarkov(){
 		this(3);
 		myMap = new HashMap<>();
 	}
@@ -22,7 +22,7 @@ public class EfficientMarkov extends BaseMarkov {
 	 * Second constructor for EfficientMarkov
 	 * @param order order of the Markov model
 	 */
-	EfficientMarkov(int order) {
+	public EfficientMarkov(int order) {
 		super(order);
 		myMap = new HashMap<>();
 	}
